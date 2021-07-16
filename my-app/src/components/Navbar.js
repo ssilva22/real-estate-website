@@ -13,13 +13,12 @@ const Nav = styled.nav `
     z-index:100;
     positon: fixed;
     width:100%;
-    background:red;
-    
-`
+    background:#CD853F;
+`;
 
 const NavLink=css`
 color:#fff;
-display:flex:
+display:flex;
 align-items:center;
 padding:0 1rem;
 height:100%;
@@ -73,12 +72,12 @@ margin-right:24px;
 }
 `;
 
-function Navbar() {
+const  Navbar = ({toggle}) =>  {
     return (
-        <div>
+        
         <Nav>
             <Logo to="/">HOMIX</Logo>
-            <MenuBars />
+            <MenuBars onClick={toggle} />
             <NavMenu>
                 {menuData.map((item,index)=>(
                     <NavMenuLinks to={item.link} key={index}>
@@ -90,7 +89,7 @@ function Navbar() {
                 <Button to="/contact" primary="true">Contact us</Button>
             </NavButton>
         </Nav>
-        </div>
+       
     )
 }
 
